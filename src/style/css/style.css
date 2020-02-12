@@ -1,0 +1,11 @@
+.navbar-brand {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.title {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+}
