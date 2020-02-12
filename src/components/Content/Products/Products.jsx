@@ -20,12 +20,12 @@ export default function Products() {
     return (
         <div className="products">
             <header className="content-title" >Products</header>
-            <Route exact path='/products' component={Cards} />
+            <Route exact path='/online-shop/products' component={Cards} />
             {
                 products.map((item, index) =>
                     <Route
                         render={() => <Product item={item} />}
-                        exact path={'/products/' + item.id} key={index} />
+                        exact path={'/online-shop/products/' + item.id} key={index} />
                 )
             }
         </div>

@@ -7,7 +7,7 @@ export default function Card({item}) {
             <img src={item.src} className="card-img-top" alt="..." />
             <div className="card-body">
                 <h5 className="card-title">
-                  <NavLink className='navLink' to={'/products/' + item.id} >{item.title} </NavLink>   
+                  <NavLink className='navLink' to={'/online-shop/products/' + item.id} >{item.title} </NavLink>   
                 </h5>
                 <p className="card-text"> {item.price} $ </p>
                 <a href="#" className="btn btn-primary w-100">Buy</a>
