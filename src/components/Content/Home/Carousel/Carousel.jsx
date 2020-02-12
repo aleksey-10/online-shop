@@ -6,22 +6,14 @@ export default function Carousel() {
             <ol className="carousel-indicators">
                 <li data-target="#carouselExampleCaptions" data-slide-to="0" className="active"></li>
                 <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
             </ol>
 
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <img src="https://i.picsum.photos/id/731/1200/400.jpg" className="d-block w-100" alt="..." />
-
+                    <img src="https://i.picsum.photos/id/885/1920/500.jpg" className="d-block w-100 carousel-item__img" alt="..." />
                 </div>
                 <div className="carousel-item">
-                    <img src="https://i.picsum.photos/id/1054/1200/400.jpg" className="d-block w-100" alt="..." />
-
-
-                </div>
-                <div className="carousel-item">
-                    <img src="https://i.picsum.photos/id/883/1200/400.jpg" className="d-block w-100" alt="..." />
-
+                    <img src="https://i.picsum.photos/id/315/1920/500.jpg" className="d-block w-100" alt="..." />
                 </div>
             </div>
 

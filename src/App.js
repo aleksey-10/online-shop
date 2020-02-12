@@ -11,7 +11,7 @@ function App() {
       <div className="wrapper">
         <Header/>
         <Content />
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </BrowserRouter>
   );

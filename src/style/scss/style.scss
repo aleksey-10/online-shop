@@ -3,9 +3,52 @@
     font-weight: bold;
 }
 
-.title {
+.content {
+    text-align: justify;
+}
+
+.content-title {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 2rem;
     text-align: center;
+}
+
+@media all and (max-width: 992px) {
+    .carousel {
+        display: none;
+    }
+}
+
+.products-cards {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .card {
+        margin: 10px;
+        width: 18rem;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    .card-title {
+        height: 100px;
+    }
+
+    .card-text {
+        text-align: right;
+        height: 25px;
+    }
+}
+
+.navLink {
+    color: black;
+    &:hover {
+        color: black;
+        opacity: 0.7;
+        text-decoration: none;
+    }
 }
