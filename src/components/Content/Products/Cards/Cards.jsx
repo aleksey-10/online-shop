@@ -3,11 +3,11 @@ import Card from './Card/Card';
 
 
 
-export default function Cards({products}) {
+export default function Cards(props) {
     return (
         <div className="products-cards">
             {
-                products.map((item, index) => <Card key={index} item={item} />)
+                props.products.map((item, index) => <Card key={index} item={item} countItems={props.countItems} />)
             }
         </div>
     )

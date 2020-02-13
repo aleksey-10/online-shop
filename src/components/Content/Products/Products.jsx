@@ -8,7 +8,7 @@ export default function Products(props) {
     return (
         <div className="products">
             <header className="content-title" >Products</header>
-            <Route exact path='/online-store/products' render={() => <Cards products={props.products} />} />
+            <Route exact path='/online-store/products' render={() => <Cards products={props.products} countItems={props.countItems} />} />
             {
                 props.products.map((item, index) =>
                     <Route render={() => <Product item={item} countItems={props.countItems} />}
