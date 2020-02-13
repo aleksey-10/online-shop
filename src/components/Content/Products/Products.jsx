@@ -1,30 +1,16 @@
 import React from 'react';
-import Card from './Card/Card';
-import products from './products';
 import { Route } from 'react-router-dom';
 import Product from './Product/Product';
+import Cards from './Cards/Cards';
 
-let Cards = () => {
-    return (
-        <div className="products-cards">
-            {
-                products.map((item, index) => <Card key={index} item={item} />)
-            }
-        </div>
-    )
-}
-
-
-export default function Products() {
-
+export default function Products({ products }) {
     return (
         <div className="products">
             <header className="content-title" >Products</header>
-            <Route exact path='/online-shop/products' component={Cards} />
+            <Route exact path='/online-shop/products' render={() => <Cards products={products} />} />
             {
                 products.map((item, index) =>
-                    <Route
-                        render={() => <Product item={item} />}
+                    <Route render={() => <Product item={item} />}
                         exact path={'/online-shop/products/' + item.id} key={index} />
                 )
             }
