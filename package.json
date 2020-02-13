@@ -1,6 +1,6 @@
 {
-  "homepage": "http://aleksey-10.github.io/online-shop/",
-  "name": "online_shop",
+  "homepage": "http://aleksey-10.github.io/online-store/",
+  "name": "online_store",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

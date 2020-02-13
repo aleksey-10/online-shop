@@ -1,8 +1,20 @@
 .basket {
-  cursor: pointer; }
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: right; }
   .basket .basket__icon {
     font-size: 1.5em;
     color: gray; }
+  .basket .basket__qty, .basket .basket__icon {
+    margin: 5px;
+    padding: 0; }
+  .basket .basket__qty {
+    color: red; }
 
 .nav-link {
   margin: 0 10px; }

@@ -1,9 +1,19 @@
 .basket {
     cursor: pointer;
+    display: flex; align-items: center;
+    text-align: right;
     
     .basket__icon {
         font-size: 1.5em;
         color: gray;
+    }
+
+    .basket__qty, .basket__icon {
+        margin: 5px; padding: 0;
+    }
+
+    .basket__qty {
+        color: red;
     }
 }
 

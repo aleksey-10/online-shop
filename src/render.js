@@ -1,14 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
 import * as serviceWorker from './serviceWorker';
-import state, { countItems } from './redux/state';
-import rerenderEntireTree from './render';
 
-rerenderEntireTree(state, countItems);
-
-
-
-
+export default function rerenderEntireTree(state, countItems){
+    ReactDOM.render(<App state={state} countItems={countItems} />, document.getElementById('root'));
+}
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

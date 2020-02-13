@@ -1,3 +1,5 @@
+import rerenderEntireTree from './../render';
+
 const state = {
     products: [
         {
@@ -28,7 +30,15 @@ const state = {
             description: "Nemo odit veniam corrupti iste officiis praesentium, exercitationem aliquid quasi officia dolor eum non, necessitatibus nulla, debitis aliquam quis quidem animi culpa omnis ex rem quae nam unde! Nihil officia quas possimus minus beatae. Explicabo maxime praesentium, modi ullam consectetur aliquid iusto repellat, delectus dolore aperiam fugit neque ut quia.",
             id: 3
         }
-    ]
+    ],
+    basket: {
+        qty: 0
+    }
 };
+
+export function countItems() {
+    state.basket.qty++;
+    rerenderEntireTree(state, countItems);
+}
 
 export default state;

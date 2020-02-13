@@ -5,15 +5,15 @@ import { BrowserRouter } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import Content from './components/Content/Content';
 
-function App({state}) {
+function App(props) {
   return (
-    <BrowserRouter>
-      <div className="wrapper">
-        <Header/>
-        <Content state={state} />
-        <Footer />
-      </div>
-    </BrowserRouter>
+      <BrowserRouter>
+        <div className="wrapper">
+          <Header basket={props.state.basket} />
+          <Content state={props.state} countItems={props.countItems} />
+          <Footer />
+        </div>
+      </BrowserRouter >
   );
 }
 

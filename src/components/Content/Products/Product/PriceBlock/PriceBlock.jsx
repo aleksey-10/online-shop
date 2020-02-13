@@ -1,12 +1,12 @@
 import React from 'react';
 
-export default function PriceBlock({ price }) {
+export default function PriceBlock(props) {
     return (
         <div className="price-block">
             <span className="price-block__el price-block__price">
-                {price.toFixed(2)} $
+                {props.price.toFixed(2)} $
         </span>
-            <a href="#" className="btn btn-primary price-block__el">Add to cart</a>
+            <button onClick={props.countItems} className="btn btn-primary price-block__el">Add to cart</button>
         </div>
     )
 }

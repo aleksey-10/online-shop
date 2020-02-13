@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import './Header.css';
 
 let Brand = () => {
-    return <NavLink className="navbar-brand mr-auto" to="/online-shop/">Company name</NavLink>
+    return <NavLink className="navbar-brand mr-auto" to="/online-store/">Company name</NavLink>
 }
 
 let MenuToggler = () => {
@@ -13,12 +13,12 @@ let MenuToggler = () => {
     </button>
 }
 
-export default function Header() {
+export default function Header({basket}) {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
             <Brand />
             <MenuToggler />
-            <Menu />
+            <Menu basket={basket} />
         </nav>
     )
 }
