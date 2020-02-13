@@ -1,6 +1,7 @@
 import React from 'react';
 import Menu from './Menu/Menu';
 import { NavLink } from 'react-router-dom';
+import './Header.css';
 
 let Brand = () => {
     return <NavLink className="navbar-brand mr-auto" to="/online-shop/">Company name</NavLink>

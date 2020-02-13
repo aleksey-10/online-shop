@@ -9,7 +9,7 @@ export default function Card({item}) {
                 <h5 className="card-title">
                   <NavLink className='navLink' to={'/online-shop/products/' + item.id} >{item.title} </NavLink>   
                 </h5>
-                <p className="card-text"> {item.price} $ </p>
+                <p className="card-text"> {item.price.toFixed(2)} $ </p>
                 <a href="#" className="btn btn-primary w-100">Buy</a>
             </div>
         </div >)

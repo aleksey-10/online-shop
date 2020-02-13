@@ -1,0 +1,8 @@
+.basket {
+  cursor: pointer; }
+  .basket .basket__icon {
+    font-size: 1.5em;
+    color: gray; }
+
+.nav-link {
+  margin: 0 10px; }

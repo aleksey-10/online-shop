@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import Basket from './Basket/Basket';
 
 let Li = props => {
     return (
@@ -19,6 +20,7 @@ export default function Menu() {
                 <Li title='Manufacturing' path='/online-shop/manufacturing' />
                 <Li title='Contact us' path='/online-shop/contact' />
             </ul>
+            <Basket />
         </div>
     )
 }
