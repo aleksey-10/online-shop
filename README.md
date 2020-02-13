@@ -1,5 +1,5 @@
 ##Demo
-https://aleksey-10.github.io/online-shop/
+https://aleksey-10.github.io/online-store/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
