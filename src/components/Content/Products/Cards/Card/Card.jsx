@@ -1,16 +1,16 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import PriceBlock from './../../PriceBlock/PriceBlock';
 
-export default function Card({item}) {
+export default function Card(props) {
     return (
         <div className="card bg-light" >
-            <img src={item.src} className="card-img-top" alt="..." />
+            <img src={props.item.src} className="card-img-top" alt="..." />
             <div className="card-body">
                 <h5 className="card-title">
-                  <NavLink className='navLink' to={'/online-store/products/' + item.id} >{item.title} </NavLink>   
+                  <NavLink className='navLink' to={'/online-store/products/' + props.item.id} >{props.item.title} </NavLink>   
                 </h5>
-                <p className="card-text"> {item.price.toFixed(2)} $ </p>
-                <a href="#" className="btn btn-primary w-100">Buy</a>
-            </div>
+                <PriceBlock item={props.item} dispatch={props.dispatch} /> 
+                  </div>
         </div >)
 }

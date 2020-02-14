@@ -10,7 +10,7 @@ function App(props) {
       <BrowserRouter>
         <div className="wrapper">
           <Header basket={props.state.basket} />
-          <Content state={props.state} countItems={props.countItems} />
+          <Content state={props.state} dispatch={props.dispatch} />
           <Footer />
         </div>
       </BrowserRouter >
