@@ -1,4 +1,4 @@
-.basket {
+.cart {
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7,14 +7,16 @@
   -ms-flex-align: center;
   align-items: center;
   text-align: right; }
-  .basket .basket__icon {
+  .cart .cart__icon {
     font-size: 1.5em;
     color: gray; }
-  .basket .basket__qty, .basket .basket__icon {
+  .cart .cart__qty, .cart .cart__icon {
     margin: 5px;
     padding: 0; }
-  .basket .basket__qty {
+  .cart .cart__qty {
     color: red; }
+  .cart:hover {
+    text-decoration: none; }
 
 .nav-link {
   margin: 0 10px; }

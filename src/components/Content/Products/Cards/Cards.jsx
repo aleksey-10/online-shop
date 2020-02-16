@@ -1,13 +1,11 @@
 import React from 'react';
 import Card from './Card/Card';
 
-
-
-export default function Cards(props) {
+export default function Cards({catalog}) {
     return (
         <div className="products-cards">
             {
-                props.products.map((item, index) => <Card key={index} item={item} countItems={props.countItems} />)
+                catalog.map((item, index) => <Card key={index} item={item}/>)
             }
         </div>
     )

@@ -5,12 +5,12 @@ import { BrowserRouter } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import Content from './components/Content/Content';
 
-function App(props) {
+function App() {
   return (
       <BrowserRouter>
         <div className="wrapper">
-          <Header basket={props.state.basket} />
-          <Content state={props.state} countItems={props.countItems} />
+          <Header />
+          <Content />
           <Footer />
         </div>
       </BrowserRouter >

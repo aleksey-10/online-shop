@@ -3,7 +3,7 @@ import React from 'react';
 export default function Jumbotron() {
     return (
         <div className="jumbotron bg-light container">
-            <h1 className="display-4">Hello World!</h1>
+            <h1 className="display-4">Welcome!</h1>
             <p className="lead"></p>
             <p className="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id quis debitis, ducimus corporis cum corrupti ab beatae voluptatem ut soluta laborum, voluptas blanditiis laboriosam, ratione magnam et esse ipsa cupiditate veniam suscipit sint eligendi dolore! Sunt praesentium quas facilis, iste natus vel nemo animi provident ea voluptatem incidunt ullam dolore.</p>
             <hr className="my-4" />

@@ -10,10 +10,10 @@ export default function Carousel() {
 
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <img src="https://i.picsum.photos/id/885/1920/500.jpg" className="d-block w-100 carousel-item__img" alt="..." />
+                    <img src="https://www.york.ac.uk/media/study/courses/undergraduate/electronics/EE-comp-BEng-ind.jpg" className="d-block w-100 carousel-item__img" alt="..." />
                 </div>
                 <div className="carousel-item">
-                    <img src="https://i.picsum.photos/id/315/1920/500.jpg" className="d-block w-100" alt="..." />
+                    <img src="https://www.nutsvolts.com/uploads/articles/NV_0704_Christopherson_Large.jpg" className="d-block w-100" alt="..." />
                 </div>
             </div>
 

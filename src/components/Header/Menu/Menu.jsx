@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Basket from './Basket/Basket';
+import CartIcon from './CartIcon/CartIcon';
+import CartIconContainer from './CartIcon/CartIconContainer';
 
 let Li = props => {
     return (
@@ -10,7 +11,7 @@ let Li = props => {
     )
 }
 
-export default function Menu({basket}) {
+export default function Menu( ) {
     return (
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mx-auto w-100 justify-content-center">
@@ -20,7 +21,7 @@ export default function Menu({basket}) {
                 <Li title='Manufacturing' path='/online-store/manufacturing' />
                 <Li title='Contact us' path='/online-store/contact' />
             </ul>
-            <Basket basket={basket} />
+            <CartIconContainer />
         </div>
     )
 }

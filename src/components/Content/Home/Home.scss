@@ -1,3 +1,10 @@
 .jumbotron {
     margin: 25px auto;
 }
+
+.carousel-item {
+    max-height: 400px;
+    img {
+        transform: translateY(-20%);
+    }
+}

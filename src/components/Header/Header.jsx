@@ -13,12 +13,12 @@ let MenuToggler = () => {
     </button>
 }
 
-export default function Header({basket}) {
+export default function Header() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
             <Brand />
             <MenuToggler />
-            <Menu basket={basket} />
+            <Menu />
         </nav>
     )
 }

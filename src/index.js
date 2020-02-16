@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
 import * as serviceWorker from './serviceWorker';
-import state, { countItems } from './redux/state';
-import rerenderEntireTree from './render';
+import store from './redux/store';
+import { Provider } from 'react-redux';
 
-rerenderEntireTree(state, countItems);
-
-
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>, document.getElementById('root'));
 
 
 
