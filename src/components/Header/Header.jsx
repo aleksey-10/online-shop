@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import './Header.css';
 
 let Brand = () => {
-    return <NavLink className="navbar-brand mr-auto" to="/online-store/">Company name</NavLink>
+    return <NavLink className="navbar-brand mr-auto" to="/online-store/">COMPANY</NavLink>
 }
 
 let MenuToggler = () => {
