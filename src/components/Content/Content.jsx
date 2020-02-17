@@ -5,7 +5,7 @@ import About from './About/About';
 import ProductsContainer from './Products/ProductsContainer';
 import Manufacturing from './Manufacturing/Manufacturing';
 import Contact from './Contact/Contact';
-import Cart from './Cart/Cart';
+import CartContainer from './Cart/CartContainer';
 
 export default function Content (props) {
     return (
@@ -15,7 +15,7 @@ export default function Content (props) {
             <Route path='/online-store/products' component = {ProductsContainer} />
             <Route path='/online-store/manufacturing' component={Manufacturing} />
             <Route path='/online-store/contact' component={Contact} />
-            <Route path='/online-store/cart' component ={ Cart } />
+            <Route path='/online-store/cart' component ={ CartContainer } />
         </main>
     )
 }

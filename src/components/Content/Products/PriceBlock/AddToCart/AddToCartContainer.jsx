@@ -1,4 +1,4 @@
-import { addToCartActionCreator } from '../../../../../redux/productsReducer';
+import { addToCartAC } from '../../../../../redux/productsReducer';
 import AddToCart from './AddToCart';
 import { connect } from 'react-redux';
 
@@ -11,7 +11,7 @@ let mapStateToProps = () => {
 let mapDispatchToProps = (dispatch, ownProps) => {
     return {
         addToCart: () => {
-            dispatch(addToCartActionCreator(ownProps.item.id, ownProps.item.qty)) 
+            dispatch(addToCartAC(ownProps.item, ownProps.item.qty)) 
         }
     }
 } 

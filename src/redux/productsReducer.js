@@ -1,15 +1,17 @@
+const ON_CHANGE_TO_BUY = 'ON-CHANGE-TO-BUY';
+const ADD_TO_CART = 'ADD-TO-CART';
+const SET_CATALOG = 'SET-CATALOG';
+const CLEAR_CART = 'CLEAR-CART';
+
 const initState = {
     catalog: [],
 
     get cart() {
         if (localStorage.getItem('cart') !== null) {
             return JSON.parse(localStorage.getItem('cart'));
-        } else return {
-            items: [],
-            totalQty: 0,
-            totalSum: 0
-        };
+        } else return { items: [], totalQty: 0, totalSum: 0 };
     }
+
 };
 
 
@@ -18,38 +20,38 @@ export default function productReducer(prevState = initState, action) {
 
     switch (action.type) {
 
-        case 'ON-CHANGE-TO-BUY':
+        case ON_CHANGE_TO_BUY:
             return {
                 ...prevState,
                 catalog: prevState.catalog.map(item => {
                     if (item.id === action.id) {
                         item.qty = action.qty;
-                        item.sum = item.qty*item.price;
+                        item.sum = item.qty * item.price;
                     }
 
                     return item;
                 })
             };
 
-        case 'ADD-TO-CART':
+        case ADD_TO_CART:
             state = {
                 ...prevState,
-                catalog: [...prevState.catalog],
+                catalog: prevState.catalog.map(item => {
+                    if (item.id === action.item.id) {
+                        item.qty = 1; item.sum = item.price;
+                        action.sum = item.price * action.qty;
+                    }
+                    return item;
+                }),
                 cart: { ...prevState.cart }
             };
 
-            state.catalog.map(item => {
-                if (item.id === action.id) {
-                    item.qty = 1; item.sum = item.price;
-                    action.sum = item.price * action.qty;
-                }
-            });
-
-            if (!state.cart.items.filter(item => item.id === action.id).length) {
-                state.cart.items.push({ id: action.id, qty: action.qty, sum: action.sum });
+            if (!state.cart.items.filter(item => item.id === action.item.id).length) {
+                state.cart.items.push({ ...action.item, qty: action.qty, sum: action.sum });
             } else {
                 state.cart.items.map(item => {
-                    if (item.id === action.id) { item.qty += action.qty; item.sum += action.sum; }
+                    if (item.id === action.item.id) { item.qty += action.qty; item.sum += action.sum; }
+                    return item;
                 });
             }
 
@@ -59,17 +61,25 @@ export default function productReducer(prevState = initState, action) {
             localStorage.setItem('cart', JSON.stringify(state.cart));
             return state;
 
-        case 'SET-CATALOG':
+        case SET_CATALOG:
             return {
                 ...prevState,
                 catalog: action.catalog
-            }
+            };
+
+        case CLEAR_CART:
+            localStorage.removeItem('cart');
+            return {
+                ...prevState,
+                cart: { items: [], totalQty: 0, totalSum: 0 }
+            };
 
         default:
             return prevState;
     }
 }
 
-export const addToCartActionCreator = (id, qty) => ({ type: 'ADD-TO-CART', id, qty: +qty });
-export const onChangeToBuyActionCreator = (id, qty) => ({ type: 'ON-CHANGE-TO-BUY', id, qty });
-export const setCatalogAction = catalog => ({ type: 'SET-CATALOG', catalog });
+export const addToCartAC = (item, qty) => ({ type: ADD_TO_CART, item, qty: +qty })
+export const onChangeToBuyAC = (id, qty) => ({ type: ON_CHANGE_TO_BUY, id, qty })
+export const setCatalogAC = catalog => ({ type: SET_CATALOG, catalog })
+export const clearCartAC = () => ({ type: CLEAR_CART })
