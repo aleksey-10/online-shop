@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap");
 .loader {
   position: absolute;
   text-align: center;
@@ -72,6 +73,8 @@
   flex: 1 0 auto;
   text-align: justify; }
   .content .content-title {
+    font-family: 'Nunito Sans', sans-serif;
+    color: #4D4D4D;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 2rem;

@@ -5,8 +5,8 @@ export default function Cards({catalog}) {
     return (
         <div className="products-cards">
             {
-                catalog.map((item, index) => <Card key={index} item={item}/>)
-            }
+                catalog.map( item => <Card key={item.id} item={item}/>)
+            }                   
         </div>
     )
 }

@@ -3,9 +3,7 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-  justify-content: space-around; }
+  flex-wrap: wrap; }
   .products-cards .card {
     margin: 10px;
     width: 18rem; }
@@ -42,6 +40,9 @@
   .price-block .price-block__el {
     margin: 10px;
     text-align: center; }
+
+.product-item {
+  margin: 25px auto; }
 
 .product-item-description {
   display: -webkit-box;

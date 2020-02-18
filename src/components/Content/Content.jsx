@@ -12,7 +12,7 @@ export default function Content (props) {
         <main className='content container-fluid'>
             <Route exact path={'/online-store/' } component={Home} />
             <Route path='/online-store/about' component={About} />
-            <Route path='/online-store/products' component = {ProductsContainer} />
+            <Route path='/online-store/products/:productId?' component = {ProductsContainer} />
             <Route path='/online-store/manufacturing' component={Manufacturing} />
             <Route path='/online-store/contact' component={Contact} />
             <Route path='/online-store/cart' component ={ CartContainer } />

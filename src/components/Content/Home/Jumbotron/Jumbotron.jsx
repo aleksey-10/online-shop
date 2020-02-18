@@ -10,7 +10,7 @@ export default function Jumbotron() {
             <hr className="my-4" />
             <p>Quis ut corrupti incidunt nisi tempora necessitatibus itaque? Quisquam, excepturi doloremque iste possimus expedita autem inventore sint animi!  </p>
             <p className="lead">
-                <NavLink className="btn btn-primary btn-lg" to="/online-store/products" role="button">Learn more</NavLink>
+                <NavLink className="btn btn-primary btn-lg" to="/online-store/products" role="button">Go to products</NavLink>
             </p>
         </div>
     )

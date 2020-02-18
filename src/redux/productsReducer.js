@@ -2,6 +2,8 @@ const ON_CHANGE_TO_BUY = 'ON-CHANGE-TO-BUY';
 const ADD_TO_CART = 'ADD-TO-CART';
 const SET_CATALOG = 'SET-CATALOG';
 const CLEAR_CART = 'CLEAR-CART';
+const REMOVE_CART_ITEM = 'REMOVE-CART-ITEM';
+const ON_CHANGE_CART_QTY = 'ON-CHANGE-CART-QTY';
 
 const initState = {
     catalog: [],
@@ -26,7 +28,7 @@ export default function productReducer(prevState = initState, action) {
                 catalog: prevState.catalog.map(item => {
                     if (item.id === action.id) {
                         item.qty = action.qty;
-                        item.sum = item.qty * item.price;
+                        item.sum = action.qty * item.price;
                     }
 
                     return item;
@@ -55,10 +57,8 @@ export default function productReducer(prevState = initState, action) {
                 });
             }
 
-            state.cart.totalQty += action.qty;
-            state.cart.totalSum += action.sum;
+            calcSumAndQty(state);
 
-            localStorage.setItem('cart', JSON.stringify(state.cart));
             return state;
 
         case SET_CATALOG:
@@ -74,12 +74,58 @@ export default function productReducer(prevState = initState, action) {
                 cart: { items: [], totalQty: 0, totalSum: 0 }
             };
 
+        case REMOVE_CART_ITEM:
+            state = {
+                ...prevState,
+                cart: {
+                    ...prevState.cart,
+                    items: prevState.cart.items.filter(item => item.id !== action.id)
+                }
+            }
+
+            calcSumAndQty(state);
+
+            return state;
+
+        case ON_CHANGE_CART_QTY:
+            state = {
+                ...prevState,
+                cart: {
+                    items: prevState.cart.items.map(item => {
+                        if (item.id === action.id) {
+                            item.qty = action.qty;
+                            item.sum = action.qty * item.price;
+                        }
+                        return item;
+                    })
+                }
+            }
+
+            calcSumAndQty(state);
+
+            return state;
+
         default:
             return prevState;
     }
 }
 
-export const addToCartAC = (item, qty) => ({ type: ADD_TO_CART, item, qty: +qty })
-export const onChangeToBuyAC = (id, qty) => ({ type: ON_CHANGE_TO_BUY, id, qty })
-export const setCatalogAC = catalog => ({ type: SET_CATALOG, catalog })
-export const clearCartAC = () => ({ type: CLEAR_CART })
+export let addToCart = (item, qty) => ({ type: ADD_TO_CART, item, qty: +qty })
+
+export let onChangeToBuy = (id, qty) => ({ type: ON_CHANGE_TO_BUY, id, qty })
+
+export let setCatalog = catalog => ({ type: SET_CATALOG, catalog })
+
+export let clearCartAC = () => ({ type: CLEAR_CART })
+
+export let removeCartItem = (id) => ({ type: REMOVE_CART_ITEM, id })
+
+export let onChangeCartQty = (id, qty) => ({ type: ON_CHANGE_CART_QTY, id, qty: +qty })
+
+
+let calcSumAndQty = state => {
+    state.cart.totalQty = state.cart.items.reduce((sum, item) => sum += item.qty, 0);
+    state.cart.totalSum = state.cart.items.reduce((sum, item) => sum += item.sum, 0);
+
+    localStorage.setItem('cart', JSON.stringify(state.cart));
+}

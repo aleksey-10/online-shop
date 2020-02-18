@@ -1,20 +1,14 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
 import './Products.css';
-import Cards from './Cards/Cards';
-import Product from './Product/Product';
+import Card from './Card/Card';
 
 export default function Products(props) {
-    return (<div className="products">
+    return (<div className="products container-fluid">
         <header className="content-title" >Products</header>
-        <Route exact path='/online-store/products'
-            render={() => <Cards catalog={props.catalog} />} />
-        {
-            props.catalog.map((item, index) =>
-                <Route render={() =>
-                    <Product item={item} />}
-                    exact path={'/online-store/products/' + item.id} key={index} />
-            )
-        }
+        <div className="products-cards ">
+            {
+                props.catalog.map(item => <Card key={item.id} item={item} />)
+            }
+        </div>
     </div>)
 }

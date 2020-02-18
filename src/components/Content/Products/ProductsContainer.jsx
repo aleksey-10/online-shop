@@ -1,19 +1,23 @@
 import React from 'react';
 import Products from './Products';
 import { connect } from 'react-redux';
-import { setCatalogAC } from '../../../redux/productsReducer';
+import { setCatalog } from '../../../redux/productsReducer';
 import * as axios from 'axios';
-import Loader from '../Loader/Loader';
+import Preloader from './../../common/Preloader';
+import ProductContainer from './Product/ProductContainer';
 
 class ProductsAPI extends React.Component {
     componentDidMount() {
-        
         axios.get("https://my-json-server.typicode.com/aleksey-10/online-store/db")
             .then(response => this.props.setCatalog(response.data.catalog));
     }
 
-    render() {
-        return !this.props.catalog.length ? <Loader /> : <Products catalog={this.props.catalog} />
+    render() {        
+        if (!this.props.catalog.length) return <Preloader />
+
+        if (!this.props.match.params.productId) return <Products catalog={this.props.catalog} />
+
+        return <ProductContainer id={+this.props.match.params.productId} />            
     }
 }
 
@@ -23,13 +27,6 @@ let mapStateToProps = state => {
     }
 }
 
-let mapDispatchToProps = dispatch => {
-    return {
-        setCatalog: catalogData => dispatch(setCatalogAC(catalogData))
-    }
-}
-
-
-const ProductsContainer = connect(mapStateToProps, mapDispatchToProps)(ProductsAPI);
+const ProductsContainer = connect(mapStateToProps, { setCatalog })(ProductsAPI);
 
 export default ProductsContainer;

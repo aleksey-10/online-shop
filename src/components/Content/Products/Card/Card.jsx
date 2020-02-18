@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import PriceBlock from './../../PriceBlock/PriceBlock';
+import PriceBlockContainer from '../PriceBlock/PriceBlockContainer';
 
 export default function Card(props) {
   return (
@@ -10,7 +10,7 @@ export default function Card(props) {
         <h5 className="card-title">
           <NavLink className='navLink' to={'/online-store/products/' + props.item.id} >{props.item.title} </NavLink>
         </h5>
-        <PriceBlock item={props.item}  />
+        <PriceBlockContainer item={props.item}  />
       </div>
     </div >)
 }

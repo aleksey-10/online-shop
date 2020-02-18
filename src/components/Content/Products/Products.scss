@@ -1,7 +1,7 @@
 .products-cards {
     display: flex; 
     flex-wrap: wrap;
-    justify-content: space-around;
+    // justify-content: space-around;
 
     .card {
         margin: 10px;
@@ -40,6 +40,10 @@
         margin: 10px;
         text-align: center;
     }
+}
+
+.product-item {
+    margin: 25px auto;
 }
 
 .product-item-description  {

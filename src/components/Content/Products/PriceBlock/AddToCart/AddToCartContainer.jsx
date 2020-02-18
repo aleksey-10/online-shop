@@ -1,4 +1,4 @@
-import { addToCartAC } from '../../../../../redux/productsReducer';
+import { addToCart } from '../../../../../redux/productsReducer';
 import AddToCart from './AddToCart';
 import { connect } from 'react-redux';
 
@@ -8,14 +8,6 @@ let mapStateToProps = () => {
     }
 }
 
-let mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-        addToCart: () => {
-            dispatch(addToCartAC(ownProps.item, ownProps.item.qty)) 
-        }
-    }
-} 
-
-const AddToCartContainer = connect(mapStateToProps, mapDispatchToProps)(AddToCart);
+const AddToCartContainer = connect(mapStateToProps, {addToCart})(AddToCart);
 
 export default AddToCartContainer;

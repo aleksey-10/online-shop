@@ -1,6 +1,6 @@
 import InputQty from './InputQty';
 import { connect } from 'react-redux';
-import { onChangeToBuyAC } from './../../../../../redux/productsReducer';
+import { onChangeToBuy, addToCart } from './../../../../../redux/productsReducer';
 
 let mapStateToProps = (state, ownProps) => {
     return {
@@ -8,14 +8,6 @@ let mapStateToProps = (state, ownProps) => {
     }
 }
 
-let mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-        onChangeQty: (event) => {
-            dispatch(onChangeToBuyAC(ownProps.item.id, event.target.value))
-        }
-    }
-}
-
-const InputQtyContainer = connect(mapStateToProps, mapDispatchToProps)(InputQty);
+const InputQtyContainer = connect(mapStateToProps, {onChangeToBuy, addToCart})(InputQty);
 
 export default InputQtyContainer;
