@@ -111,21 +111,15 @@ export default function productReducer(prevState = initState, action) {
 }
 
 export let addToCart = (item, qty) => ({ type: ADD_TO_CART, item, qty: +qty })
-
 export let onChangeToBuy = (id, qty) => ({ type: ON_CHANGE_TO_BUY, id, qty })
-
 export let setCatalog = catalog => ({ type: SET_CATALOG, catalog })
-
 export let clearCartAC = () => ({ type: CLEAR_CART })
-
 export let removeCartItem = (id) => ({ type: REMOVE_CART_ITEM, id })
-
 export let onChangeCartQty = (id, qty) => ({ type: ON_CHANGE_CART_QTY, id, qty: +qty })
 
 
 let calcSumAndQty = state => {
     state.cart.totalQty = state.cart.items.reduce((sum, item) => sum += item.qty, 0);
     state.cart.totalSum = state.cart.items.reduce((sum, item) => sum += item.sum, 0);
-
     localStorage.setItem('cart', JSON.stringify(state.cart));
 }

@@ -5,6 +5,7 @@ import { setCatalog } from '../../../redux/productsReducer';
 import * as axios from 'axios';
 import Preloader from './../../common/Preloader';
 import ProductContainer from './Product/ProductContainer';
+import { withRouter } from 'react-router-dom';
 
 class ProductsAPI extends React.Component {
     componentDidMount() {
@@ -27,6 +28,6 @@ let mapStateToProps = state => {
     }
 }
 
-const ProductsContainer = connect(mapStateToProps, { setCatalog })(ProductsAPI);
+const ProductsContainer = connect(mapStateToProps, { setCatalog })(withRouter(ProductsAPI));
 
 export default ProductsContainer;
