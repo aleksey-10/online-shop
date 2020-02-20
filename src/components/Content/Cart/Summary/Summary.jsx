@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../Cart.module.css';
+import styles from '../Cart.module.scss';
 
 export default function Summary(props) {
     return (
@@ -13,9 +13,9 @@ export default function Summary(props) {
                 <span>{props.cart.totalSum.toFixed(2)} $</span>
             </div>
             <div className={styles.buttonsSummary}>
-                <button className="btn btn-primary ">Submit</button>
+                <button className="btn btn-primary ">Buy</button>
                 <button className="btn btn-danger "
-                    onClick={props.clearCart}>Clear cart</button>
+                    onClick={props.clearCartTC}>Clear cart</button>
             </div>
         </div>
     )

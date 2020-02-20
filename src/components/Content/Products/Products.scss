@@ -1,7 +1,6 @@
 .products-cards {
     display: flex; 
     flex-wrap: wrap;
-    // justify-content: space-around;
 
     .card {
         margin: 10px;
@@ -39,6 +38,12 @@
     .price-block__el {
         margin: 10px;
         text-align: center;
+        
+        >span {
+            margin: 10px 0;
+            font-size: 0.9em;
+            text-align: justify;
+        }
     }
 }
 

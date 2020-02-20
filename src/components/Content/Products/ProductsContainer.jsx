@@ -1,16 +1,14 @@
 import React from 'react';
 import Products from './Products';
 import { connect } from 'react-redux';
-import { setCatalog } from '../../../redux/productsReducer';
-import * as axios from 'axios';
 import Preloader from './../../common/Preloader';
 import ProductContainer from './Product/ProductContainer';
 import { withRouter } from 'react-router-dom';
+import { getProductsThunkCreator } from '../../../redux/productsReducer';
 
-class ProductsAPI extends React.Component {
+class ProductsContainer extends React.Component {
     componentDidMount() {
-        axios.get("https://my-json-server.typicode.com/aleksey-10/online-store/db")
-            .then(response => this.props.setCatalog(response.data.catalog));
+        this.props.getProductsThunkCreator();
     }
 
     render() {        
@@ -28,6 +26,4 @@ let mapStateToProps = state => {
     }
 }
 
-const ProductsContainer = connect(mapStateToProps, { setCatalog })(withRouter(ProductsAPI));
-
-export default ProductsContainer;
+export default connect(mapStateToProps, {getProductsThunkCreator})(withRouter(ProductsContainer));

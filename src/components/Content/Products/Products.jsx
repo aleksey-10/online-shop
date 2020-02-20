@@ -1,5 +1,5 @@
 import React from 'react';
-import './Products.css';
+import './Products.scss';
 import Card from './Card/Card';
 
 export default function Products(props) {

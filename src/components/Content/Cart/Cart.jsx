@@ -7,10 +7,10 @@ export default function Cart(props) {
         <header className="content-title" >Cart </header>
         {
             !props.cart.totalQty ?
-                <div className="alert alert-info" role="alert">The cart is empty</div> :
+                <div className="alert alert-info" role="alert">Your cart is empty</div> :
                 (<>
                     <ItemsInCart cart={props.cart} />
-                    <Summary cart={props.cart} clearCart={props.clearCart} />
+                    <Summary cart={props.cart} clearCartTC={props.clearCartTC} setLs={props.setLs}  />
                 </>)
         } </div>)
 }
