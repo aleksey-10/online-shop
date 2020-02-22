@@ -2,7 +2,8 @@
       
       Technologies used in this project:
 
-1. React JS (UI)
-2. Redux (BLL)
-3. Bootstrap (for styling components)
-4. Axios
+1. React JS (Routing)
+2. Redux (Thunk)
+3. SCSS
+4. Bootstrap
+5. Axios
