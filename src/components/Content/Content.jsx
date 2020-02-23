@@ -6,6 +6,7 @@ import ProductsContainer from './Products/ProductsContainer';
 import Manufacturing from './Manufacturing/Manufacturing';
 import Contact from './Contact/Contact';
 import CartContainer from './Cart/CartContainer';
+import NotFound from '../common/NotFound';
 
 export default function Content(props) {
     return (
@@ -17,6 +18,8 @@ export default function Content(props) {
                 <Route path={'/manufacturing'} component={Manufacturing} />
                 <Route path={'/contact'} component={Contact} />
                 <Route path={'/cart'} component={CartContainer} />
+
+                <Route path={'/'} component={NotFound} />
             </Switch>
         </main>
     )

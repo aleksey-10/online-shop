@@ -5,6 +5,7 @@ import Preloader from './../../common/Preloader';
 import ProductContainer from './Product/ProductContainer';
 import { withRouter } from 'react-router-dom';
 import { getProductsThunkCreator } from '../../../redux/productsReducer';
+import { compose } from 'redux';
 
 class ProductsContainer extends React.Component {
     componentDidMount() {
@@ -26,4 +27,7 @@ let mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {getProductsThunkCreator})(withRouter(ProductsContainer));
+export default compose(
+    connect(mapStateToProps, {getProductsThunkCreator}),
+    withRouter
+)(ProductsContainer);

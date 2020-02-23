@@ -7,5 +7,5 @@ let mapStateToProps = (state, ownProps) => ({
     catalog: state.products.catalog
 })
 
-export default connect(mapStateToProps, 
-    {onChangeToBuy, addToCartTC })(PriceBlock);
+export default connect(mapStateToProps,
+    { onChangeToBuy, addToCartTC })(PriceBlock);
