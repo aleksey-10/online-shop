@@ -1,19 +1,23 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form';
 
-const SortForm = props => <form className="row justify-content-center" onSubmit={props.handleSubmit}>
-    <Field
-        name="sort"
-        component={"select"}
-        className="custom-select" style={{ maxWidth: 250 }}
-        onChange={props.submit}
-    >
-        <option value="">Sort by...</option>
-        <option value="title">title</option>
-        <option value="price">price</option>
-        <option value="stock">quantity</option>
-    </Field>
+const SortForm = props => {
+    const onChangeSelect = () => setTimeout( props.submit, 0)
 
-</form>
+    return <form onSubmit={props.handleSubmit}>
+        <Field
+            name="sort"
+            component={"select"}
+            className="custom-select"
+            onChange={onChangeSelect}
+        >
+            <option value="" disabled={true}>Sort by...</option>
+            <option value="title">Title</option>
+            <option value="price">Price</option>
+            <option value="stock">Quantity</option>
+        </Field>
 
-export default reduxForm({form: "sortForm"})(SortForm)
+    </form>
+}
+
+export default reduxForm({ form: "sortForm" })(SortForm)

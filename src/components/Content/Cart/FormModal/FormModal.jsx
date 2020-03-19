@@ -20,7 +20,7 @@ export default props => (
                         // onClick={event => {
                         //     // event.preventDefault();
                         // }}
-                        // onClick={() => props.submitPurchase(props.cart)} 
+                        onClick={() => props.submitPurchase(props.cart)} 
                         />
                     </div>
                 </form>
