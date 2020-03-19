@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Preloader from './../../common/Preloader';
 import ProductContainer from './Product/ProductContainer';
 import { withRouter } from 'react-router-dom';
-import { getProductsThunkCreator } from '../../../redux/productsReducer';
+import { getProductsThunkCreator, sortProducts } from '../../../redux/productsReducer';
 import { compose } from 'redux';
 
 class ProductsContainer extends React.Component {
@@ -15,7 +15,8 @@ class ProductsContainer extends React.Component {
     render() {        
         if (!this.props.catalog.length) return <Preloader />
 
-        if (!this.props.match.params.productId) return <Products catalog={this.props.catalog} />
+        if (!this.props.match.params.productId) 
+            return <Products catalog={this.props.catalog} sortProducts={this.props.sortProducts} />
 
         return <ProductContainer id={+this.props.match.params.productId} />            
     }
@@ -28,6 +29,6 @@ let mapStateToProps = state => {
 }
 
 export default compose(
-    connect(mapStateToProps, {getProductsThunkCreator}),
+    connect(mapStateToProps, {getProductsThunkCreator, sortProducts}),
     withRouter
 )(ProductsContainer);

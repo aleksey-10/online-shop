@@ -1,4 +1,4 @@
-import { ON_CHANGE_TO_BUY, ADD_TO_CART, SET_CATALOG, CLEAR_CART, REMOVE_CART_ITEM, ON_CHANGE_CART_QTY, CALC_TOTAL, SET_LS } from "./types";
+import { ON_CHANGE_TO_BUY, ADD_TO_CART, SET_CATALOG, CLEAR_CART, REMOVE_CART_ITEM, ON_CHANGE_CART_QTY, CALC_TOTAL, SET_LS, SORT_PRODUCTS } from "./types";
 import productsAPI from "../api/api";
 
 const initState = {
@@ -121,6 +121,13 @@ export default function productReducer(prevState = initState, action) {
             localStorage.setItem('cart', JSON.stringify(prevState.cart));
             return prevState;
 
+        case SORT_PRODUCTS:
+            return {
+                ...prevState,
+                catalog: prevState.catalog.sort( (a, b) => 
+                a[action.payload] < b[action.payload] ? -1 : 1  )
+            }
+
         default:
             return prevState;
     }
@@ -135,6 +142,7 @@ export const removeCartItem = (id) => ({ type: REMOVE_CART_ITEM, id })
 export const onChangeCartQty = (id, qty) => ({ type: ON_CHANGE_CART_QTY, id, qty: +qty })
 export const setLs = () => ({ type: SET_LS })
 export const calcTotal = () => ({ type: CALC_TOTAL })
+export const sortProducts = payload => ({type: SORT_PRODUCTS, payload})
 
 export const getProductsThunkCreator = () => dispatch => {
     productsAPI.getCatalog().then(catalog => dispatch(setCatalog(catalog)));
@@ -143,7 +151,6 @@ export const getProductsThunkCreator = () => dispatch => {
 export const addToCartTC = (item, qty) => dispatch => {
     dispatch(addToCart(item, qty));
     dispatch(calcTotal());
-    // productsAPI.setStock(item.id, item.stock);
     dispatch(setLs());
 }
 
