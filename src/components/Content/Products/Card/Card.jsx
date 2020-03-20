@@ -7,11 +7,9 @@ export default function Card(props) {
     <div className="card bg-light" >
       <NavLink className='navLink' to={'/products/' + props.item.id}>
         <img src={props.item.src} className="card-img-top" alt={props.item.title} />
+        <h5 className="card-title">{props.item.title} </h5>
       </NavLink>
       <div className="card-body">
-        <h5 className="card-title">
-          <NavLink className='navLink' to={'/products/' + props.item.id} >{props.item.title} </NavLink>
-        </h5>
         <PriceBlockContainer item={props.item} />
       </div>
     </div >)
