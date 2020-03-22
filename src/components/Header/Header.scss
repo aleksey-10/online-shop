@@ -2,18 +2,18 @@
     cursor: pointer;
     display: flex; align-items: center;
     text-align: right;
-    
-    .cart__icon {
-        font-size: 1.5em;
-        color: gray;
-    }
+    min-width: 100px;
 
-    .cart__qty, .cart__icon {
-        margin: 5px; padding: 0;
+    .cart__icon {
+        color: gray;
+        font-size: 1.3em;
     }
 
     .cart__qty {
-        color: red;
+        color: rgb(255, 145, 0);
+        font-size: .8em;
+        margin-left: 5px;
+        font-weight: bold;
     }
 
     &:hover {

@@ -16,11 +16,8 @@ export default props => (
                         <FormModalBody />
                     </div>
                     <div className="modal-footer">
-                        <input type="submit" className="btn btn-primary" value="Send request" 
-                        // onClick={event => {
-                        //     // event.preventDefault();
-                        // }}
-                        onClick={() => props.submitPurchase(props.cart)} 
+                        <input type="submit" className="btn btn-primary" value="Send request"
+                            onClick={() => props.submitPurchase(props.cart)}
                         />
                     </div>
                 </form>
