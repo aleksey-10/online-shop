@@ -1,4 +1,4 @@
-# AIR Landing
+# Online Store
 
 [DEMO LINK](https://aleksey-10.github.io/online-store)
 
