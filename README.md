@@ -1,9 +1,15 @@
-<a href="https://aleksey-10.github.io/online-store">DEMO</a>
-      
-      Technologies used in this project:
+# AIR Landing
 
-1. React JS (Routing)
-2. Redux (Thunk)
-3. SCSS
-4. Bootstrap
-5. Axios
+[DEMO LINK](https://aleksey-10.github.io/online-store)
+
+## Tech stack
+- React JS (Routing)
+- Redux (Thunk)
+- SCSS / Bootstrap
+- Axios
+
+## Install
+npm install
+
+## Run
+npm start
