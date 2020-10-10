@@ -1,67 +1,68 @@
 .products-cards {
-    display: flex; 
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 
-    .card {
-        margin: 10px;
-        width: 18rem;
+  .card {
+    margin: 10px;
+    width: 18rem;
 
-        &:hover {
-            text-decoration: none;
-        }
+    &:hover {
+      text-decoration: none;
     }
+  }
 
-    .card-div-img {
-        display: flex; flex-direction: column;
-        justify-content: center;
-    }
+  .card-img-wrapper {
+    height: 200px;
+    display: flex;
+    align-items: center;
+  }
 
-    .card-title {
-        height: 50px;
-        margin: 20px;
-    }
+  .card-title {
+    height: 50px;
+    margin: 20px;
+  }
 
-    .card-text {
-        text-align: right;
-        height: 25px;
-    }
+  .card-text {
+    text-align: right;
+    height: 25px;
+  }
 }
 
 .price-block {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    .price-block__price {
-        border-top: 1px solid lightgray;
-        padding-top: 10px;
-    }
+  .price-block__price {
+    border-top: 1px solid lightgray;
+    padding-top: 10px;
+  }
 
-    .price-block__el {
-        margin: 10px;
-        text-align: center;
-        
-        >span {
-            margin: 10px 0;
-            font-size: 0.9em;
-            text-align: justify;
-        }
+  .price-block__el {
+    margin: 10px;
+    text-align: center;
+
+    > span {
+      margin: 10px 0;
+      font-size: 0.9em;
+      text-align: justify;
     }
+  }
 }
 
 .product-item {
-    margin: 25px auto;
+  margin: 25px auto;
 }
 
-.product-item-description  {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    
-    .product-item-description__header {
-        flex: 1 0 auto;
-    }
+.product-item-description {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 
-    .product-item-description__footer {
-        flex: 0 0 auto;
-    }
+  .product-item-description__header {
+    flex: 1 0 auto;
+  }
+
+  .product-item-description__footer {
+    flex: 0 0 auto;
+  }
 }

@@ -1,68 +1,74 @@
-@import '~bootstrap/scss/bootstrap';
-@import './loader';
+@import "~bootstrap/scss/bootstrap";
+@import "./loader";
 
 .wrapper {
-    min-height: 100vh;
-    display: flex; flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
-    .navbar-brand {
-        text-transform: uppercase;
-        font-weight: bold;
-    }
+  .navbar-brand {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
 }
 
 .content {
-    flex: 1 0 auto;
-    text-align: justify;
-    
-    .content-title {
-        @import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
-        font-family: 'Nunito Sans', sans-serif;
-        color: #4D4D4D;
-        text-transform: uppercase;
-        font-weight: bold;
-        font-size: 2rem;
-        text-align: center;
-    }
+  flex: 1 0 auto;
+  text-align: justify;
+
+  &-title {
+    @import url("https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap");
+    font-family: "Nunito Sans", sans-serif;
+    color: #4d4d4d;
+    padding-top: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+  }
 }
 
 @media all and (max-width: 992px) {
-    .carousel {
-        display: none;
-    }
+  .carousel {
+    display: none;
+  }
 }
 
 .navLink {
+  color: black;
+  &:hover {
     color: black;
-    &:hover {
-        color: black;
-        opacity: 0.7;
-        text-decoration: none;
-    }
+    opacity: 0.7;
+    text-decoration: none;
+  }
 }
 
 .footer {
-    flex: 0 0 auto;
-    justify-self: end;
-    padding: 15px;
-    width: 100%;
-    text-align: center;
+  flex: 0 0 auto;
+  justify-self: end;
+  padding: 15px;
+  width: 100%;
+  text-align: center;
 }
 
 .contact-items {
-    i {
-        color: lightskyblue
-    }
+  i {
+    color: lightskyblue;
+  }
 
-    >div {
-        margin: 10px 0;
-    }
-    a {
-        margin-left: 10px;
-    }
-    .google-map {
-        min-height: 500px;
-    } 
+  > div {
+    margin: 10px 0;
+  }
+  a {
+    margin-left: 10px;
+  }
+  .google-map {
+    min-height: 500px;
+  }
+}
+
+.lead {
+  line-height: 2em;
 }
